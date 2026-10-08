@@ -120,7 +120,7 @@ Resources:
                     INJECT basic-auth-lambda.py
             MemorySize: 128
             Role: !GetAtt BasicAuthRole.Arn
-            Runtime: "python3.8"
+            Runtime: "python3.13"
             Timeout: 5
             TracingConfig:
                 Mode: "PassThrough"
@@ -140,7 +140,7 @@ Resources:
                     INJECT s3-get-index-html-gen-lambda.py
             MemorySize: 256
             Role: !GetAtt IndexGenRole.Arn
-            Runtime: "python3.8"
+            Runtime: "python3.13"
             Timeout: 30
             TracingConfig:
                 Mode: "PassThrough"
@@ -160,7 +160,7 @@ Resources:
                   INJECT redirect-bare-to-index-html-lambda.py
             MemorySize: 128
             Role: !GetAtt RedirectHtmlRole.Arn
-            Runtime: "python3.8"
+            Runtime: "python3.13"
             Timeout: 3
             TracingConfig:
                 Mode: "PassThrough"
