@@ -1008,6 +1008,12 @@ Resources:
                 HttpVersion: "http2"
                 DefaultRootObject: "/index.html"
                 IPV6Enabled: true
+                Aliases:
+                  - "genealogie.patlaplante.com"
+                ViewerCertificate:
+                    AcmCertificateArn: "arn:aws:acm:us-east-1:296341624178:certificate/f54327d6-7efe-4c97-a459-38b2647c4ed5"
+                    SslSupportMethod: "sni-only"
+                    MinimumProtocolVersion: "TLSv1.2_2021"
 
     BasicAuthLambdaFunctionVersionPy313:
         Type: "AWS::Lambda::Version"
