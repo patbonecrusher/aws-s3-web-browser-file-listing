@@ -944,10 +944,10 @@ Resources:
                     LambdaFunctionAssociations:
                       -
                         EventType: "origin-response"
-                        LambdaFunctionARN: !Ref RedirectToBareLambdaFunctionVersion
+                        LambdaFunctionARN: !Ref RedirectToBareLambdaFunctionVersionPy313
                       -
                         EventType: "viewer-request"
-                        LambdaFunctionARN: !Ref BasicAuthLambdaFunctionVersion
+                        LambdaFunctionARN: !Ref BasicAuthLambdaFunctionVersionPy313
                     SmoothStreaming: false
                     TargetOriginId: !Sub "S3-${S3Bucket}"
                     ViewerProtocolPolicy: "redirect-to-https"
@@ -962,10 +962,10 @@ Resources:
                     LambdaFunctionAssociations:
                       -
                         EventType: "origin-request"
-                        LambdaFunctionARN: !Ref IndexGenLambdaFunctionVersion
+                        LambdaFunctionARN: !Ref IndexGenLambdaFunctionVersionPy313
                       -
                         EventType: "viewer-request"
-                        LambdaFunctionARN: !Ref BasicAuthLambdaFunctionVersion
+                        LambdaFunctionARN: !Ref BasicAuthLambdaFunctionVersionPy313
                     PathPattern: "*/"
                     SmoothStreaming: false
                     TargetOriginId: !Sub "S3-${S3Bucket}"
@@ -980,10 +980,10 @@ Resources:
                     LambdaFunctionAssociations:
                       -
                         EventType: "origin-request"
-                        LambdaFunctionARN: !Ref IndexGenLambdaFunctionVersion
+                        LambdaFunctionARN: !Ref IndexGenLambdaFunctionVersionPy313
                       -
                         EventType: "viewer-request"
-                        LambdaFunctionARN: !Ref BasicAuthLambdaFunctionVersion
+                        LambdaFunctionARN: !Ref BasicAuthLambdaFunctionVersionPy313
                     PathPattern: "*index.html"
                     SmoothStreaming: false
                     TargetOriginId: !Sub "S3-${S3Bucket}"
@@ -1009,19 +1009,19 @@ Resources:
                 DefaultRootObject: "/index.html"
                 IPV6Enabled: true
 
-    BasicAuthLambdaFunctionVersion:
+    BasicAuthLambdaFunctionVersionPy313:
         Type: "AWS::Lambda::Version"
         Properties:
             Description: "Version published for Lambda@Edge"
             FunctionName: !Ref BasicAuthLambdaFunction
 
-    IndexGenLambdaFunctionVersion:
+    IndexGenLambdaFunctionVersionPy313:
         Type: "AWS::Lambda::Version"
         Properties:
             Description: "Version published for Lambda@Edge"
             FunctionName: !Ref IndexGenLambdaFunction
 
-    RedirectToBareLambdaFunctionVersion:
+    RedirectToBareLambdaFunctionVersionPy313:
         Type: "AWS::Lambda::Version"
         Properties:
             Description: "Version published for Lambda@Edge"
